@@ -24,14 +24,18 @@
               <span class="logo-text">KM Paramed</span>
             </a>
           </div>
-          <nav class="main-nav">
+          <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+            <span class="hamburger-icon"></span>
+          </button>
+          <nav class="main-nav" id="main-nav">
             <ul class="nav-links">
               <li><a href="index.html" class="nav-link">Accueil</a></li>
               <li><a href="products.html" class="nav-link">Produits</a></li>
               <li><a href="index.html#about" class="nav-link">À Propos</a></li>
             </ul>
+            <a href="contact.html" class="btn-contact active mobile-only">Contactez-Nous</a>
           </nav>
-          <a href="contact.html" class="btn-contact active">Contactez-Nous</a>
+          <a href="contact.html" class="btn-contact active desktop-only">Contactez-Nous</a>
         </div>
       </header>
 
@@ -158,6 +162,18 @@
       </footer>
     </div>
     <script>
+      // Mobile menu toggle
+      document.addEventListener('DOMContentLoaded', function() {
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const mainNav = document.getElementById('main-nav');
+        
+        mobileMenuToggle.addEventListener('click', function() {
+          mobileMenuToggle.classList.toggle('active');
+          mainNav.classList.toggle('active');
+          document.body.classList.toggle('menu-open');
+        });
+      });
+      
       // Form submission 
       document.getElementById('contactForm').addEventListener('submit', function(e) {
         e.preventDefault();
@@ -166,19 +182,6 @@
         // For now, we'll just show a success message
         alert('Votre message a été envoyé avec succès! Nous vous contacterons bientôt.');
         this.reset();
-      });
-    </script>
-    <script>
-      // Mobile menu toggle
-      document.addEventListener('DOMContentLoaded', function() {
-        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-        const mainNav = document.getElementById('mainNav');
-        
-        if (mobileMenuToggle && mainNav) {
-          mobileMenuToggle.addEventListener('click', function() {
-            mainNav.classList.toggle('active');
-          });
-        }
       });
     </script>
   </body>

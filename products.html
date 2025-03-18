@@ -24,14 +24,18 @@
               <span class="logo-text">KM Paramed</span>
             </a>
           </div>
-          <nav class="main-nav">
+          <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+            <span class="hamburger-icon"></span>
+          </button>
+          <nav class="main-nav" id="main-nav">
             <ul class="nav-links">
               <li><a href="index.html" class="nav-link">Accueil</a></li>
               <li><a href="products.html" class="nav-link active">Produits</a></li>
               <li><a href="index.html#about" class="nav-link">À Propos</a></li>
             </ul>
+            <a href="contact.html" class="btn-contact mobile-only">Contactez-Nous</a>
           </nav>
-          <a href="contact.html" class="btn-contact">Contactez-Nous</a>
+          <a href="contact.html" class="btn-contact desktop-only">Contactez-Nous</a>
         </div>
       </header>
 
@@ -255,14 +259,14 @@
     <script>
       // Mobile menu toggle
       document.addEventListener('DOMContentLoaded', function() {
-        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-        const mainNav = document.getElementById('mainNav');
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const mainNav = document.getElementById('main-nav');
         
-        if (mobileMenuToggle && mainNav) {
-          mobileMenuToggle.addEventListener('click', function() {
-            mainNav.classList.toggle('active');
-          });
-        }
+        mobileMenuToggle.addEventListener('click', function() {
+          mobileMenuToggle.classList.toggle('active');
+          mainNav.classList.toggle('active');
+          document.body.classList.toggle('menu-open');
+        });
       });
     </script>
   </body>
