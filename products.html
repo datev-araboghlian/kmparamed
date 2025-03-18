@@ -3,29 +3,30 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nos Produits - KM PARAMED</title>
+    <title>Nos Produits - KM Paramed</title>
     <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.30.0/tabler-icons.min.css"
     />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.34.0/tabler-icons.min.css" />
     <link rel="icon" type="image/png" href="images/favicon.png" />
   </head>
-  <body>
+  <body class="products-page">
     <div class="wrapper">
       <header class="main-header">
         <div class="container">
-          <div class="logo-wrapper">
-            <a href="index.html" class="logo">
-              <img src="images/logo.png" alt="KM Paramed" />
+          <div class="logo-container">
+            <a href="index.html">
+              <img src="images/logo.png" alt="KM Paramed" class="logo" />
               <span class="logo-text">KM Paramed</span>
             </a>
           </div>
-          <button class="mobile-menu-toggle" id="mobileMenuToggle">
-            <i class="ti ti-menu-2"></i>
-          </button>
-          <nav class="main-nav" id="mainNav">
+          <nav class="main-nav">
             <ul class="nav-links">
+              <li><a href="index.html" class="nav-link">Accueil</a></li>
               <li><a href="products.html" class="nav-link active">Produits</a></li>
               <li><a href="index.html#about" class="nav-link">À Propos</a></li>
             </ul>
@@ -35,14 +36,20 @@
       </header>
 
       <main>
-        <section class="page-header">
-          <div class="container">
-            <h1 class="page-title">Catalogue de Produits</h1>
-            <p class="page-subtitle">Découvrez notre gamme complète d'équipements dentaires premium</p>
+        <section class="hero">
+          <div class="hero-bg">
+            <div class="hero-blob"></div>
+            <div class="hero-circle"></div>
+          </div>
+          <div class="container hero-container">
+            <div class="hero-content">
+              <h1 class="hero-title">Catalogue de<br /><span>Produits</span></h1>
+              <p class="hero-subtitle">Découvrez notre gamme complète d'équipements dentaires premium</p>
+            </div>
           </div>
         </section>
 
-        <section class="products-page">
+        <section class="products-section">
           <div class="container">
             <div class="products-grid">
               <!-- Fauteuils -->
@@ -212,7 +219,7 @@
         <div class="container">
           <div class="footer-content">
             <div class="footer-logo">
-              <img src="images/logo_rb.png" alt="KM PARAMED" />
+              <img src="images/logo_rb.png" alt="KM Paramed" />
               <p>Équipement dentaire de qualité supérieure pour les professionnels.</p>
             </div>
             
@@ -240,7 +247,7 @@
           </div>
           
           <div class="footer-bottom">
-            <p>&copy; 2025 KM PARAMED. Tous droits réservés.</p>
+            <p>&copy; 2025 KM Paramed. Tous droits réservés.</p>
           </div>
         </div>
       </footer>
