@@ -24,7 +24,7 @@
               <span class="logo-text">KM Paramed</span>
             </a>
           </div>
-          <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+          <button class="mobile-menu-toggle mobile-visible" id="mobile-menu-toggle" aria-label="Toggle mobile menu">
             <span class="hamburger-icon"></span>
           </button>
           <nav class="main-nav" id="main-nav">
@@ -257,15 +257,34 @@
       </footer>
     </div>
     <script>
-      // Mobile menu toggle
       document.addEventListener('DOMContentLoaded', function() {
         const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
         const mainNav = document.getElementById('main-nav');
         
+        // Force menu toggle to be visible on mobile
+        if (window.innerWidth <= 768) {
+          mobileMenuToggle.style.display = "block";
+          mobileMenuToggle.style.position = "absolute";
+          mobileMenuToggle.style.right = "20px";
+          mobileMenuToggle.style.top = "50%";
+          mobileMenuToggle.style.transform = "translateY(-50%)";
+          mobileMenuToggle.style.zIndex = "1000";
+        }
+        
+        // Toggle menu functionality
         mobileMenuToggle.addEventListener('click', function() {
           mobileMenuToggle.classList.toggle('active');
           mainNav.classList.toggle('active');
           document.body.classList.toggle('menu-open');
+        });
+        
+        // Update visibility on resize
+        window.addEventListener('resize', function() {
+          if (window.innerWidth <= 768) {
+            mobileMenuToggle.style.display = "block";
+          } else {
+            mobileMenuToggle.style.display = "none";
+          }
         });
       });
     </script>
