@@ -323,11 +323,10 @@ section {
   height: 70px;
   padding: 0 20px;
   position: relative;
-  flex-wrap: nowrap;
+  width: 100%;
 }
 
 .logo-container {
-  flex: 0 0 auto;
   display: flex;
   align-items: center;
 }
@@ -351,7 +350,8 @@ section {
 }
 
 .main-nav {
-  flex: 1 1 auto;
+  margin-left: auto;
+  margin-right: 20px;
   display: flex;
   justify-content: center;
 }
@@ -464,19 +464,37 @@ section {
 }
 
 @media (max-width: 768px) {
-  /* Show hamburger on mobile */
-  .mobile-menu-toggle {
-    display: block;
-    position: absolute;
-    top: 50%;
-    right: 20px;
-    transform: translateY(-50%);
-  }
-  
-  /* Header height adjustment */
+  /* Mobile header layout - space elements properly */
   .main-header .container {
     position: relative;
-    height: auto;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+  }
+  
+  /* Logo container */
+  .logo-container {
+    flex: 0 0 auto;
+  }
+  
+  /* Original logo size */
+  .logo {
+    height: 35px;
+  }
+  
+  /* Hamburger menu */
+  .mobile-menu-toggle {
+    display: block;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    z-index: 1000;
   }
   
   /* Hide desktop contact button */
